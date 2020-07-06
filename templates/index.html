@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+     <head>
+         <meta charset="utf-8">
+         <title>MVC ONLINE LEARNING</title>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     </head>
+
+     <body>
+     <div class = "container">
+        <h1 align="center">รายชื่อวิชาทั้งหมด และชื่ออาจารยผู้สอนของวิชานั้นๆ </h1>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>SID</th>
+              <th>Subject Name</th>
+              <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for row in dataTable1 %}
+        <tr>
+          <td>{{row.0}}</td>
+          <td>{{row.1}}</td>
+          <td>{{row.2}}</td>
+            <td>{{row.3}}</td>
+        </tr>
+          {% endfor %}
+       </table>
+     </div>
+
+     <div class = "container">
+        <h1 align="center">จำนวนวิชาที่อาจารย์แต่ละท่านสอน </h1>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+                <th>Count</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for row in dataTable2 %}
+        <tr>
+          <td>{{row.0}}</td>
+          <td>{{row.1}}</td>
+            <td>{{row.2}}</td>
+        </tr>
+        {% endfor %}
+       </table>
+     </div>
+
+     <div class = "container">
+        <h1 align="center">เรียงลำดับคะแนนความพึงพอใจต่อแพลตฟอร์มในแต่ละวิชา</h1>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Subject Name</th>
+              <th>Satisfaction Score</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for row in dataTable3 %}
+        <tr>
+          <td>{{row.0}}</td>
+          <td>{{row.1}}</td>
+        </tr>
+        {% endfor %}
+       </table>
+     </div>
+     </body>
+
+</html>
